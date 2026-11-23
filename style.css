@@ -1,0 +1,523 @@
+/* ==========================================================
+   Royal Indian Wedding Invitation - Neha & Guddu
+   Premium Stylesheet
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600;700&family=Rozha+One&family=Yatra+One&display=swap');
+
+:root {
+  --royal-maroon: #630c18;
+  --royal-maroon-dark: #3f050d;
+  --royal-maroon-light: #891424;
+  --royal-crimson: #800020;
+  --gold-primary: #d4af37;
+  --gold-light: #fbeea4;
+  --gold-dark: #997316;
+  --gold-gradient: linear-gradient(135deg, #f7d070 0%, #d4af37 50%, #9a7417 100%);
+  --gold-border-gradient: linear-gradient(45deg, #caa038, #fff4b8, #b8860b, #ffe082);
+  --ivory-bg: #fffdf9;
+  --ivory-card: #fcf8f2;
+  --card-border: rgba(212, 175, 55, 0.35);
+  --text-dark: #2c0e12;
+  --text-muted: #6b4348;
+  --haldi-yellow: #f59e0b;
+  --haldi-bg: #fffbeb;
+  --mehndi-green: #15803d;
+  --mehndi-bg: #f0fdf4;
+  --pooja-red: #b91c1c;
+  --pooja-bg: #fef2f2;
+  --shadow-gold: 0 10px 30px -5px rgba(212, 175, 55, 0.3);
+  --shadow-royal: 0 20px 40px -10px rgba(63, 5, 13, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--ivory-bg);
+  color: var(--text-dark);
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(137, 20, 36, 0.05) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #fdf6ec;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #d4af37, #891424);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #630c18;
+}
+
+/* Typography Helpers */
+.font-cinzel { font-family: 'Cinzel', serif; }
+.font-playfair { font-family: 'Playfair Display', serif; }
+.font-great-vibes { font-family: 'Great Vibes', cursive; }
+.font-yatra { font-family: 'Yatra One', cursive; }
+.font-rozha { font-family: 'Rozha One', serif; }
+.font-poppins { font-family: 'Poppins', sans-serif; }
+
+/* Gold Shimmer Text */
+.gold-shimmer {
+  background: linear-gradient(90deg, #caa038 0%, #fff2a8 50%, #b8860b 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Royal Gold Borders */
+.royal-border {
+  position: relative;
+  border: 2px solid #d4af37;
+  border-radius: 16px;
+}
+
+.royal-border::before,
+.royal-border::after {
+  content: "✤";
+  position: absolute;
+  color: #d4af37;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.royal-border::before {
+  top: -8px;
+  left: 12px;
+  background: #fff;
+  padding: 0 4px;
+}
+
+.royal-border::after {
+  bottom: -8px;
+  right: 12px;
+  background: #fff;
+  padding: 0 4px;
+}
+
+/* Ornate Corner Motif */
+.ornate-card {
+  position: relative;
+  background: #fffdfa;
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 12px 36px rgba(99, 12, 24, 0.08);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ornate-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(212, 175, 55, 0.22);
+  border-color: #d4af37;
+}
+
+/* Canvas Petals Container */
+#petals-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 40;
+}
+
+/* ==========================================================
+   Royal Envelope Opener Modal Screen
+   ========================================================== */
+.envelope-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #42080f 0%, #1a0205 100%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.envelope-overlay.opened {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.envelope-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  perspective: 1200px;
+}
+
+.envelope-card {
+  background: linear-gradient(135deg, #570913 0%, #7d1320 50%, #4a060e 100%);
+  border: 3px solid #d4af37;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(212, 175, 55, 0.3);
+  padding: 2.2rem 1.8rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.envelope-card::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px dashed rgba(251, 238, 164, 0.45);
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+/* Seal stamp button */
+.wax-seal {
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle, #f59e0b 0%, #b45309 60%, #78350f 100%);
+  border: 3px solid #fef08a;
+  border-radius: 50%;
+  margin: 1.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulse-seal 2.2s infinite;
+}
+
+.wax-seal:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 35px rgba(245, 158, 11, 0.8), inset 0 3px 8px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes pulse-seal {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(212, 175, 55, 0);
+  }
+}
+
+/* Floating Audio Player */
+.audio-control-pill {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 50;
+  background: rgba(99, 12, 24, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid #d4af37;
+  color: #fff;
+  border-radius: 9999px;
+  padding: 8px 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.audio-control-pill:hover {
+  transform: scale(1.05);
+  background: #7d1320;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+.sound-wave {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 18px;
+}
+
+.sound-wave span {
+  width: 3px;
+  height: 100%;
+  background: #f7d070;
+  border-radius: 2px;
+  animation: wave 1.2s ease-in-out infinite alternate;
+}
+
+.sound-wave span:nth-child(2) { animation-delay: 0.2s; height: 60%; }
+.sound-wave span:nth-child(3) { animation-delay: 0.4s; height: 85%; }
+.sound-wave span:nth-child(4) { animation-delay: 0.1s; height: 40%; }
+
+.sound-wave.paused span {
+  animation: none;
+  height: 4px;
+}
+
+@keyframes wave {
+  0% { height: 20%; }
+  100% { height: 100%; }
+}
+
+/* Floating Action Stack */
+.floating-actions {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.float-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7d1320, #42080f);
+  color: #fff;
+  border: 1.5px solid #d4af37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.float-btn:hover {
+  transform: scale(1.12) translateY(-3px);
+  border-color: #fff2a8;
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* Hero Section Styles */
+.hero-bg {
+  background: linear-gradient(180deg, #3f050d 0%, #630c18 40%, #7d1320 70%, #fffdf9 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#d4af37 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+/* Ornate Frame for Couple Photos */
+.couple-frame {
+  position: relative;
+  padding: 12px;
+  background: linear-gradient(135deg, #b8860b 0%, #ffd700 50%, #8b6508 100%);
+  border-radius: 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 30px rgba(212, 175, 55, 0.4);
+}
+
+.couple-frame-inner {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+}
+
+.couple-frame-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.couple-frame:hover .couple-frame-inner img {
+  transform: scale(1.04);
+}
+
+/* Arch Shaped Frame */
+.arch-frame {
+  border-top-left-radius: 160px;
+  border-top-right-radius: 160px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+/* Countdown Card */
+.countdown-box {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(251, 238, 164, 0.35);
+  border-radius: 16px;
+  padding: 16px 12px;
+  min-width: 78px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Toran / Flower Garland Effect */
+.toran-garland {
+  height: 28px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #f59e0b 0px,
+    #f59e0b 16px,
+    #15803d 16px,
+    #15803d 32px,
+    #e11d48 32px,
+    #e11d48 48px
+  );
+  mask-image: radial-gradient(circle at 16px 0px, transparent 12px, #000 13px);
+  mask-size: 32px 28px;
+  -webkit-mask-image: radial-gradient(circle at 16px 0px, transparent 12px, #000 13px);
+  -webkit-mask-size: 32px 28px;
+  opacity: 0.85;
+}
+
+/* Event Timeline Cards */
+.event-card {
+  position: relative;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1.5px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 10px 30px rgba(99, 12, 24, 0.06);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(212, 175, 55, 0.25);
+  border-color: #d4af37;
+}
+
+.event-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+}
+
+.event-card.haldi::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+.event-card.mehndi::before { background: linear-gradient(90deg, #15803d, #22c55e); }
+.event-card.pooja::before { background: linear-gradient(90deg, #b91c1c, #f43f5e); }
+.event-card.vivah::before { background: linear-gradient(90deg, #630c18, #d4af37, #630c18); }
+
+/* Gallery Lightbox */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 85vh;
+  position: relative;
+  text-align: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 12px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  object-fit: contain;
+}
+
+/* Mandala Decorative Spin */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin-slow {
+  animation: spinSlow 35s linear infinite;
+}
+
+/* Diya Glow Effect */
+@keyframes diyaFlicker {
+  0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 6px #f59e0b); }
+  50% { opacity: 1; filter: drop-shadow(0 0 14px #fbbf24); }
+}
+
+.diya-glow {
+  animation: diyaFlicker 1.8s ease-in-out infinite;
+}
+
+/* Location Badges & Cards */
+.badge-kishanganj {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+.badge-patna {
+  background: linear-gradient(135deg, #7d1320 0%, #42080f 100%);
+  color: #fef08a;
+  border: 1px solid #d4af37;
+  box-shadow: 0 4px 15px rgba(99, 12, 24, 0.4);
+}
+
+.kishanganj-zone {
+  border-left: 4px solid #f59e0b;
+  background: linear-gradient(to right, rgba(254, 243, 199, 0.4), transparent);
+}
+
+.patna-zone {
+  border-left: 4px solid #7d1320;
+  background: linear-gradient(to right, rgba(254, 226, 226, 0.35), transparent);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .countdown-box {
+    min-width: 65px;
+    padding: 10px 6px;
+  }
+  .arch-frame {
+    border-top-left-radius: 110px;
+    border-top-right-radius: 110px;
+  }
+}

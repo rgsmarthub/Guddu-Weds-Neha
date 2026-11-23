@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>शुभ विवाह निमंत्रण | नेहा संग गुड्डू | 30 नवम्बर 2026</title>
+  <meta name="description" content="आयुष्मती नेहा कुमारी संग आयुष्मान् गुड्डू राय के शुभ विवाह का शाही डिजिटल निमंत्रण पत्र। दाउदनगर, पटना (बिहार)।">
+
+  <!-- Open Graph Meta Tags for WhatsApp & Social Sharing -->
+  <meta property="og:title" content="🌸 शुभ विवाह निमंत्रण: नेहा संग गुड्डू 🌸">
+  <meta property="og:description" content="30 नवम्बर 2026 | मंजु वाटिका, दाउदनगर, पटना। आपकी गरिमामयी उपस्थिति सादर प्रार्थनीय है।">
+  <meta property="og:image" content="Images/photo_6064143413210190479_y.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600;700&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Canvas Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#fffdf9] text-amber-950 font-poppins selection:bg-amber-600 selection:text-white">
+
+  <!-- ========================================================
+       Background Wedding Music Element
+       ======================================================== -->
+  <audio id="wedding-audio" loop preload="auto">
+    <source src="wedding-song.mp3" type="audio/mpeg">
+    <source src="Background Song/sahilmadan-wedding-invitation-421393.mp3" type="audio/mpeg">
+    <source src="Background%20Song/sahilmadan-wedding-invitation-421393.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ========================================================
+       Canvas For Falling Flower Petals
+       ======================================================== -->
+  <canvas id="petals-canvas"></canvas>
+
+  <!-- ========================================================
+       Floating Audio Player Pill (Traditional Shehnai)
+       ======================================================== -->
+  <div id="audio-pill" class="audio-control-pill" title="शहनाई / संगीत चालू/बंद करें">
+    <div id="sound-wave" class="sound-wave paused">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <span id="audio-text" class="text-xs font-semibold tracking-wide text-amber-200">संगीत चालू करें</span>
+    <i class="fa-solid fa-music text-amber-300 text-sm"></i>
+  </div>
+
+  <!-- ========================================================
+       Floating Action Stack (Petal Shower & WhatsApp)
+       ======================================================== -->
+  <div class="floating-actions">
+    <button id="petal-shower-btn" class="float-btn" title="पुष्प वर्षा (Flower Shower)">
+      🌸
+    </button>
+    <button id="whatsapp-share-btn" class="float-btn bg-emerald-700 hover:bg-emerald-600" title="व्हाट्सएप पर निमंत्रण भेजें">
+      <i class="fa-brands fa-whatsapp text-xl"></i>
+    </button>
+    <a href="#events" class="float-btn" title="कार्यक्रम सूची देखें">
+      <i class="fa-solid fa-calendar-days"></i>
+    </a>
+  </div>
+
+  <!-- ========================================================
+       Royal Envelope Opener Modal (Opening Experience)
+       ======================================================== -->
+  <div id="envelope-overlay" class="envelope-overlay">
+    <div class="envelope-wrapper">
+      <div class="envelope-card">
+        <!-- Religious Emblem -->
+        <div class="mb-3">
+          <span class="inline-block px-4 py-1 rounded-full bg-amber-400/20 border border-amber-300/40 text-amber-200 text-xs tracking-widest font-yatra">
+            ॥ श्री गणेशाय नमः ॥
+          </span>
+        </div>
+
+        <div class="text-amber-200 text-3xl mb-2 font-rozha">
+          卐 शुभ विवाह निमंत्रण 卐
+        </div>
+
+        <p class="text-amber-100/90 text-sm italic font-playfair mb-4">
+          परमपिता परमेश्वर की असीम अनुकम्पा से
+        </p>
+
+        <!-- Golden Names Frame -->
+        <div class="my-4 p-4 rounded-xl bg-amber-950/60 border border-amber-400/40 shadow-inner">
+          <div class="text-3xl md:text-4xl font-yatra gold-shimmer font-bold mb-1">
+            नेहा &amp; गुड्डू
+          </div>
+          <div class="text-xs tracking-widest uppercase text-amber-200/90 font-cinzel">
+            Royal Wedding Invitation • 2026
+          </div>
+        </div>
+
+        <p class="text-xs md:text-sm text-amber-100/80 mb-6 leading-relaxed font-poppins px-2">
+          हमारे इस मांगलिक अवसर पर आपकी गरिमामयी उपस्थिति एवं स्नेहील आशीर्वाद सादर प्रार्थनीय है।
+        </p>
+
+        <!-- Wax Seal Button -->
+        <button id="open-invite-btn" onclick="openInvitation()" class="wax-seal group cursor-pointer" aria-label="Open Invitation">
+          <i class="fa-solid fa-envelope-open text-2xl text-amber-950 group-hover:scale-110 transition-transform pointer-events-none"></i>
+          <span class="text-[10px] font-bold text-amber-950 uppercase tracking-tighter mt-1 pointer-events-none">खोलें</span>
+        </button>
+
+        <p onclick="openInvitation()" class="text-[11px] text-amber-300/90 tracking-wider uppercase mt-2 cursor-pointer hover:text-amber-200">
+          👆 स्पर्श कर शाही निमंत्रण पत्र खोलें
+        </p>
+
+        <!-- Secondary prominent CTA button -->
+        <div class="mt-3">
+          <button onclick="openInvitation()" class="px-6 py-2.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-amber-950 font-bold text-xs uppercase tracking-wider shadow-lg hover:brightness-110 hover:scale-105 transition-all cursor-pointer">
+            ✨ निमंत्रण पत्र देखें (Open Card) ✨
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       Top Navigation Bar
+       ======================================================== -->
+  <header class="sticky top-0 z-40 bg-[#500a13]/95 backdrop-blur-md border-b border-amber-500/40 shadow-lg text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Brand / Couple Names -->
+        <a href="#home" class="flex items-center space-x-2 group">
+          <span class="text-xl text-amber-400 group-hover:rotate-12 transition-transform">𑁍</span>
+          <span class="font-yatra text-xl md:text-2xl font-bold tracking-wide gold-shimmer">
+            नेहा 𑁍 गुड्डू
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+          <a href="#home" class="text-amber-100 hover:text-amber-300 transition-colors">मुख्य पृष्ठ</a>
+          <a href="#couple" class="text-amber-100 hover:text-amber-300 transition-colors">वर-वधू</a>
+          <a href="#events" class="text-amber-100 hover:text-amber-300 transition-colors">वैवाहिक कार्यक्रम</a>
+          <a href="#countdown" class="text-amber-100 hover:text-amber-300 transition-colors">शुभ मुहूर्त</a>
+          <a href="#gallery" class="text-amber-100 hover:text-amber-300 transition-colors">शाही गैलरी</a>
+          <a href="#venue" class="text-amber-100 hover:text-amber-300 transition-colors">विवाह स्थल</a>
+          <a href="#card-scan" class="text-amber-100 hover:text-amber-300 transition-colors">मूल शादी कार्ड</a>
+          <a href="#family" class="text-amber-100 hover:text-amber-300 transition-colors">स्नेहीजन</a>
+          <button id="reopen-invite-btn" class="px-3 py-1.5 rounded-full border border-amber-400/60 text-amber-200 text-xs hover:bg-amber-800/40 transition-all flex items-center space-x-1.5" title="शाही निमंत्रण लिफाफा फिर देखें">
+            <i class="fa-solid fa-envelope"></i>
+            <span>लिफाफा खोलें</span>
+          </button>
+          <a href="#rsvp" class="px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-700 text-white font-semibold text-xs shadow-md hover:brightness-110 transition-all">
+            सपरिवार आमंत्रण
+          </a>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-amber-300 hover:bg-amber-900/50 focus:outline-none">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#3c070e] border-t border-amber-600/30 px-4 pt-3 pb-5 space-y-2 text-sm">
+      <a href="#home" class="block py-2 text-amber-100 hover:text-amber-300 border-b border-amber-900/40">मुख्य पृष्ठ</a>
+      <a href="#couple" class="block py-2 text-amber-100 hover:text-amber-300 border-b border-amber-900/40">वर-वधू परिचय</a>
+      <a href="#events" class="block py-2 text-amber-100 hover:text-amber-300 border-b border-amber-900/40">वैवाहिक कार्यक्रम</a>
+      <a href="#countdown" class="block py-2 text-amber-100 hover:text-amber-300 border-b border-amber-900/40">शुभ मुहूर्त उल्टी गिनती</a>
+      <a href="#gallery" class="block py-2 text-amber-100 hover:text-amber-300 border-b border-amber-900/40">फोटो गैलरी</a>
+      <a href="#venue" class="block py-2 text-amber-100 hover:text-amber-300 border-b border-amber-900/40">विवाह स्थल व मानचित्र</a>
+      <a href="#card-scan" class="block py-2 text-amber-100 hover:text-amber-300 border-b border-amber-900/40">मूल शादी पत्रिका</a>
+      <a href="#family" class="block py-2 text-amber-100 hover:text-amber-300 border-b border-amber-900/40">दर्शनाभिलाषी व आकांक्षी</a>
+      <button onclick="document.getElementById('reopen-invite-btn').click()" class="block w-full text-left py-2 text-amber-200 hover:text-amber-300 border-b border-amber-900/40">
+        ✉️ शाही निमंत्रण लिफाफा दोबारा देखें
+      </button>
+      <a href="#rsvp" class="block py-2 text-amber-300 font-semibold">सपरिवार आमंत्रण व शुभकामनाएं</a>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       Decorative Toran (Flower Garland) Border
+       ======================================================== -->
+  <div class="toran-garland w-full shadow-sm"></div>
+
+  <!-- ========================================================
+       HERO SECTION: Grand Royal Welcome & Couple Showcase
+       ======================================================== -->
+  <section id="home" class="hero-bg text-white pt-12 pb-20 px-4 sm:px-6 relative">
+    <div class="hero-pattern"></div>
+
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+
+      <!-- Ganesha Vandana Emblem -->
+      <div class="inline-flex flex-col items-center mb-6">
+        <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-amber-400 via-amber-600 to-amber-800 p-1 shadow-2xl diya-glow">
+          <div class="w-full h-full rounded-full bg-[#4a0810] flex items-center justify-center border border-amber-300/40">
+            <span class="text-3xl md:text-4xl text-amber-300">🕉️</span>
+          </div>
+        </div>
+        <span class="mt-3 text-sm md:text-base font-yatra tracking-widest text-amber-200">
+          ॥ श्रीश्री गणेशाय नमः ॥
+        </span>
+      </div>
+
+      <!-- Sacred Sanskrit Shloka Box -->
+      <div class="max-w-2xl mx-auto bg-black/35 backdrop-blur-md border border-amber-500/40 rounded-2xl p-5 mb-8 shadow-2xl">
+        <p class="font-rozha text-sm md:text-lg text-amber-100 leading-relaxed mb-2">
+          "वक्रतुण्ड महाकाय सूर्य कोटि समप्रभः।<br>
+          निर्विघ्नं कुरुमे देव सर्वकार्येषु सर्वदा॥"
+        </p>
+        <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto my-2"></div>
+        <p class="font-rozha text-xs md:text-sm text-amber-200/90 leading-relaxed">
+          "मंगलम् भगवान विष्णुः मंगलम् गरुड़ध्वजः।<br>
+          मंगलम् पुण्डरीकाक्षः मंगलाय तनोहरि॥"
+        </p>
+      </div>
+
+      <!-- Main Invitation Heading -->
+      <div class="mb-4">
+        <span class="text-xs md:text-sm tracking-widest uppercase font-cinzel text-amber-300 px-4 py-1 rounded-full border border-amber-400/30 bg-amber-950/40">
+          परमपिता परमेश्वर की असीम अनुकम्पा से
+        </span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold font-yatra gold-shimmer tracking-tight drop-shadow-lg mb-2">
+        नेहा <span class="text-3xl sm:text-5xl md:text-6xl text-amber-400 font-great-vibes font-normal mx-2">संग</span> गुड्डू
+      </h1>
+
+      <div class="flex items-center justify-center space-x-3 text-amber-200 text-sm md:text-lg font-rozha mb-8">
+        <span>卐</span>
+        <span class="border-b border-amber-400/50 pb-1">के पावन परिणय सूत्र बन्धन</span>
+        <span>卐</span>
+      </div>
+
+      <!-- Grand Couple Photo Showcase (Bridal & Groom Royal Portraits) -->
+      <div class="max-w-3xl mx-auto mb-10 px-2 sm:px-4">
+        <div class="grid grid-cols-2 gap-3 sm:gap-6 items-center">
+          
+          <!-- Groom Portrait Frame -->
+          <div class="couple-frame arch-frame p-2 sm:p-3 relative group">
+            <div class="w-full aspect-[3/4] arch-frame overflow-hidden bg-amber-950 relative shadow-2xl">
+              <img src="Images/Groom.png" 
+                   alt="आयुष्मान् गुड्डू राय (वर)" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-md border border-amber-400/40 rounded-lg p-1.5 sm:p-2 text-center">
+                <span class="text-[10px] sm:text-xs text-amber-300 font-cinzel uppercase tracking-wider block">Groom</span>
+                <p class="font-yatra text-amber-100 text-xs sm:text-sm font-bold">आयुष्मान् गुड्डू</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bride Portrait Frame -->
+          <div class="couple-frame arch-frame p-2 sm:p-3 relative group">
+            <div class="w-full aspect-[3/4] arch-frame overflow-hidden bg-amber-950 relative shadow-2xl">
+              <img src="Images/Bridal.png" 
+                   alt="आयुष्मती नेहा कुमारी (वधू)" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-md border border-amber-400/40 rounded-lg p-1.5 sm:p-2 text-center">
+                <span class="text-[10px] sm:text-xs text-rose-300 font-cinzel uppercase tracking-wider block">Bride</span>
+                <p class="font-yatra text-amber-100 text-xs sm:text-sm font-bold">आयुष्मती नेहा</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Union Gathbandhan Tag -->
+        <div class="mt-4 text-center">
+          <span class="inline-flex items-center space-x-2 px-5 py-2 rounded-full bg-black/50 backdrop-blur-md border border-amber-400/60 shadow-lg text-amber-200 text-xs sm:text-sm font-yatra">
+            <span>🌹</span>
+            <span>दो दिलों का पावन संगम • सात जन्मों का अटूट बंधन</span>
+            <span>🌹</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Card Invitation Shayari -->
+      <div class="max-w-2xl mx-auto bg-amber-950/40 border-l-4 border-r-4 border-amber-400 rounded-xl p-4 mb-8">
+        <p class="font-rozha text-sm sm:text-base text-amber-100 italic leading-relaxed">
+          "प्रेम भाव से दया भाव से, किसी भाव से ही हो स्वीकार।<br>
+          व्यर्थ न जाये प्रेम निमंत्रण, यही विनती बारंबार॥"
+        </p>
+        <p class="text-xs text-amber-300 mt-2 font-poppins">
+          की मधुर बेला में आपकी गौरवमयी उपस्थिति एवं स्नेहील आशीर्वाद की मृदुल ज्योत्स्ना से<br class="hidden sm:inline">
+          नवदम्पति के भावी जीवन को ज्योर्तिमय करने की कृपा करें।
+        </p>
+      </div>
+
+      <!-- Wedding Date & Venue Snapshot Badge -->
+      <div class="inline-flex flex-wrap items-center justify-center gap-3 bg-gradient-to-r from-amber-950/80 via-[#630c18] to-amber-950/80 border border-amber-400/50 rounded-2xl px-6 py-4 shadow-xl">
+        <div class="flex items-center space-x-2 text-amber-300">
+          <i class="fa-solid fa-calendar-day text-lg"></i>
+          <span class="font-bold text-sm md:text-base">30 नवम्बर 2026 (सोमवार)</span>
+        </div>
+        <span class="hidden md:inline text-amber-500">•</span>
+        <div class="flex items-center space-x-2 text-amber-300">
+          <i class="fa-solid fa-clock text-lg"></i>
+          <span class="font-bold text-sm md:text-base">संध्या 7:00 बजे से</span>
+        </div>
+        <span class="hidden md:inline text-amber-500">•</span>
+        <div class="flex items-center space-x-2 text-amber-300">
+          <i class="fa-solid fa-location-dot text-lg"></i>
+          <span class="font-bold text-sm md:text-base">मंजु वाटिका, दाउदनगर, पटना</span>
+        </div>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <button id="add-calendar-btn" class="px-6 py-3 rounded-full bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 text-white font-bold text-sm shadow-lg hover:shadow-amber-500/30 hover:scale-105 transition-all flex items-center space-x-2">
+          <i class="fa-solid fa-bell"></i>
+          <span>कैलेंडर में जोड़ें (Save Date)</span>
+        </button>
+        <a href="#events" class="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-amber-400/50 text-amber-200 font-bold text-sm backdrop-blur-md hover:scale-105 transition-all flex items-center space-x-2">
+          <i class="fa-solid fa-list-check"></i>
+          <span>सभी कार्यक्रम देखें</span>
+        </a>
+        <a href="#rsvp" class="px-6 py-3 rounded-full bg-rose-700 hover:bg-rose-600 text-white font-bold text-sm shadow-lg hover:scale-105 transition-all flex items-center space-x-2">
+          <i class="fa-solid fa-heart"></i>
+          <span>शुभकामनाएं भेजें</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       LIVE COUNTDOWN SECTION: शुभ मुहूर्त उल्टी गिनती
+       ======================================================== -->
+  <section id="countdown" class="py-12 bg-gradient-to-b from-[#fffdf9] via-amber-50/60 to-[#fffdf9] border-y border-amber-200 relative">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      
+      <div class="flex items-center justify-center space-x-3 mb-2">
+        <span class="w-12 h-px bg-amber-400"></span>
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-800 font-cinzel">शुभ मुहूर्त का इंतजार</span>
+        <span class="w-12 h-px bg-amber-400"></span>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-bold font-yatra text-amber-950 mb-6">
+        विवाह के पावन क्षणों की उल्टी गिनती
+      </h2>
+
+      <!-- Countdown Flip Grid -->
+      <div class="flex items-center justify-center gap-3 sm:gap-6 mb-4">
+        <!-- Days -->
+        <div class="countdown-box bg-white border-2 border-amber-300/80 shadow-md">
+          <span id="days" class="block text-2xl sm:text-4xl font-black font-cinzel text-amber-900">00</span>
+          <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-700">दिन (Days)</span>
+        </div>
+        <span class="text-xl sm:text-3xl font-bold text-amber-600">:</span>
+        <!-- Hours -->
+        <div class="countdown-box bg-white border-2 border-amber-300/80 shadow-md">
+          <span id="hours" class="block text-2xl sm:text-4xl font-black font-cinzel text-amber-900">00</span>
+          <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-700">घंटे (Hours)</span>
+        </div>
+        <span class="text-xl sm:text-3xl font-bold text-amber-600">:</span>
+        <!-- Minutes -->
+        <div class="countdown-box bg-white border-2 border-amber-300/80 shadow-md">
+          <span id="minutes" class="block text-2xl sm:text-4xl font-black font-cinzel text-amber-900">00</span>
+          <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-700">मिनट (Mins)</span>
+        </div>
+        <span class="text-xl sm:text-3xl font-bold text-amber-600">:</span>
+        <!-- Seconds -->
+        <div class="countdown-box bg-white border-2 border-amber-300/80 shadow-md">
+          <span id="seconds" class="block text-2xl sm:text-4xl font-black font-cinzel text-rose-700">00</span>
+          <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-700">सेकंड (Secs)</span>
+        </div>
+      </div>
+
+      <p id="countdown-tag" class="text-xs sm:text-sm font-semibold text-amber-800 italic">
+        ✨ 30 नवम्बर 2026 • सोमवार संध्या 07:00 बजे शुभ विवाह एवं प्रीतिभोज ✨
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       MEET BRIDE & GROOM: वर-वधू का पावन परिचय
+       ======================================================== -->
+  <section id="couple" class="py-20 px-4 sm:px-6 max-w-6xl mx-auto">
+    
+    <div class="text-center mb-16">
+      <div class="inline-block p-2 rounded-full bg-amber-100 text-amber-800 text-sm mb-3">
+        👑 राजसी वर-वधू परिचय 👑
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-yatra text-amber-950 mb-3">
+        दूल्हा एवं दुल्हन
+      </h2>
+      <p class="max-w-xl mx-auto text-sm text-amber-800/80 font-poppins">
+        दो परिवारों का पावन संगम, ईश्वर के आशीर्वाद से बँधने जा रहा सात जन्मों का अटूट बंधन।
+      </p>
+      <div class="w-24 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mt-4"></div>
+    </div>
+
+    <!-- Dual Profile Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
+
+      <!-- 1. The Bride (वधू) -->
+      <div class="ornate-card p-6 sm:p-8 text-center relative group">
+        <!-- Floating Tag -->
+        <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-rose-700 to-rose-900 text-amber-200 text-xs font-bold uppercase tracking-widest px-5 py-1.5 rounded-full border border-amber-300 shadow-md">
+          वधू (Bride)
+        </span>
+
+        <!-- Arch Frame Photo (Image Bridal.png - Beautiful Bride) -->
+        <div class="w-56 h-72 sm:w-64 sm:h-80 mx-auto mb-6 couple-frame arch-frame p-2">
+          <div class="w-full h-full arch-frame overflow-hidden bg-amber-950">
+            <img src="Images/Bridal.png" 
+                 alt="आयुष्मती नेहा कुमारी (दुल्हन)" 
+                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+          </div>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-bold font-yatra text-rose-900 mb-1">
+          आयुष्मती नेहा कुमारी
+        </h3>
+        <p class="text-xs uppercase tracking-widest text-amber-700 font-cinzel mb-4">
+          The Beautiful Bride
+        </p>
+
+        <!-- Family Details from Card -->
+        <div class="bg-amber-50/80 border border-amber-200/80 rounded-xl p-4 text-sm text-amber-950 space-y-2">
+          <p class="font-semibold text-amber-900">
+            <i class="fa-solid fa-heart text-rose-600 mr-1.5"></i>
+            द्वितीया सुपुत्री:
+          </p>
+          <p class="font-bold text-base text-[#4a0810]">
+            श्री रामा कान्त मंडल एवं श्रीमती उमा देवी
+          </p>
+          <div class="border-t border-amber-200/60 pt-2 text-xs text-amber-800 flex items-center justify-center space-x-1">
+            <i class="fa-solid fa-house-chimney text-amber-600"></i>
+            <span>पश्चिमपल्ली, जिला-किशनगंज (बिहार)</span>
+          </div>
+        </div>
+
+        <p class="mt-4 text-xs text-amber-800/90 italic font-poppins leading-relaxed">
+          "संस्कारों और शालीनता की प्रतिमूर्ति, जो अपनी मनमोहक मुस्कान और स्नेह से नए परिवार में खुशियों का उजाला बिखेरने जा रही हैं।"
+        </p>
+      </div>
+
+      <!-- 2. The Groom (वर) -->
+      <div class="ornate-card p-6 sm:p-8 text-center relative group">
+        <!-- Floating Tag -->
+        <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-700 to-amber-900 text-amber-200 text-xs font-bold uppercase tracking-widest px-5 py-1.5 rounded-full border border-amber-300 shadow-md">
+          वर (Groom)
+        </span>
+
+        <!-- Arch Frame Photo (Image Groom.png - Handsome Groom) -->
+        <div class="w-56 h-72 sm:w-64 sm:h-80 mx-auto mb-6 couple-frame arch-frame p-2">
+          <div class="w-full h-full arch-frame overflow-hidden bg-amber-950">
+            <img src="Images/Groom.png" 
+                 alt="आयुष्मान् गुड्डू राय (दूल्हा)" 
+                 class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+          </div>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-bold font-yatra text-amber-950 mb-1">
+          आयुष्मान् गुड्डू राय
+        </h3>
+        <p class="text-xs uppercase tracking-widest text-amber-700 font-cinzel mb-4">
+          The Handsome Groom
+        </p>
+
+        <!-- Family Details from Card -->
+        <div class="bg-amber-50/80 border border-amber-200/80 rounded-xl p-4 text-sm text-amber-950 space-y-2">
+          <p class="font-semibold text-amber-900">
+            <i class="fa-solid fa-crown text-amber-600 mr-1.5"></i>
+            प्रथम सुपुत्र:
+          </p>
+          <p class="font-bold text-base text-[#4a0810]">
+            श्री लाल देव राय एवं श्रीमती रीना देवी
+          </p>
+          <div class="border-t border-amber-200/60 pt-2 text-xs text-amber-800 flex items-center justify-center space-x-1">
+            <i class="fa-solid fa-house-chimney text-amber-600"></i>
+            <span>दाउद नगर, पटना (बिहार)</span>
+          </div>
+        </div>
+
+        <p class="mt-4 text-xs text-amber-800/90 italic font-poppins leading-relaxed">
+          "कर्मठ, मृदुभाषी और उच्च संस्कारों के धनी, जो नेहा के साथ जीवन के पावन सफर पर एक-दूजे के हमसफर बनने जा रहे हैं।"
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Romantic Quote Centerpiece -->
+    <div class="mt-14 max-w-3xl mx-auto bg-gradient-to-r from-amber-900 via-[#630c18] to-amber-900 text-white rounded-2xl p-6 sm:p-8 text-center shadow-xl border border-amber-400/40 relative overflow-hidden">
+      <div class="text-3xl text-amber-300 mb-2">💍 ⚭ 💖</div>
+      <h4 class="text-xl sm:text-2xl font-bold font-yatra gold-shimmer mb-2">
+        "सात फेरे, सात वचन, एक अटूट बंधन"
+      </h4>
+      <p class="text-xs sm:text-sm text-amber-100/90 font-poppins leading-relaxed max-w-2xl mx-auto">
+        सगाई की पावन अंगूठी से बंधा विश्वास, अब सात फेरों के साथ जीवन भर के पवित्र रिश्ते में बदलने जा रहा है। आप सभी के स्नेहाशीष से यह यात्रा मंगलमय होगी।
+      </p>
+    </div>
+
+  </section>
+
+  <!-- ========================================================
+       RING CEREMONY & SACRED BOND HIGHLIGHT
+       ======================================================== -->
+  <section class="py-16 bg-amber-50/50 border-y border-amber-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-800 font-cinzel">
+          सगाई से सात फेरे तक
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold font-yatra text-amber-950 mt-1 mb-2">
+          पावन सगाई की सुनहरी स्मृतियां
+        </h2>
+        <p class="text-sm text-amber-800/80 max-w-xl mx-auto">
+          जब नेहा और गुड्डू ने पहनाई एक-दूजे को सगाई की मुद्रिका और लिया साथ निभाने का संकल्प।
+        </p>
+      </div>
+
+      <!-- 3-Column Visual Moments -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Card 1: Ring Ceremony Exchange (Image 469) -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-amber-200 shadow-md hover:shadow-xl transition-all group">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="Images/photo_6064143413210190469_y.jpg" 
+                 alt="सगाई की रस्म - अंगूठी पहनाते हुए" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <span class="absolute bottom-3 left-3 bg-amber-500 text-white text-[11px] font-bold px-3 py-1 rounded-full">
+              💍 मुद्रिका बंधन
+            </span>
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-amber-950 font-yatra text-lg mb-1">अंगूठी का पावन आदान-प्रदान</h4>
+            <p class="text-xs text-amber-800 leading-relaxed">
+              सगाई के शुभ मुहूर्त में वर और वधू ने एक-दूसरे को अंगूठी पहनाकर जीवन भर साथ निभाने का संकल्प लिया।
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: Devotional Prayer Together (Image 471) -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-amber-200 shadow-md hover:shadow-xl transition-all group">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="Images/photo_6064143413210190471_y.jpg" 
+                 alt="प्रभु वंदना व शुभाशीष" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <span class="absolute bottom-3 left-3 bg-rose-600 text-white text-[11px] font-bold px-3 py-1 rounded-full">
+              🙏 ईश वंदना
+            </span>
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-amber-950 font-yatra text-lg mb-1">हाथ जोड़कर प्रभु से आशीर्वाद</h4>
+            <p class="text-xs text-amber-800 leading-relaxed">
+              पारंपरिक परिधान में नेहा और गुड्डू ने हाथ जोड़कर ईश वंदना की और बड़ों का स्नेहाशीष प्राप्त किया।
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Rings & Mehendi Showcase (Image 480) -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-amber-200 shadow-md hover:shadow-xl transition-all group sm:col-span-2 lg:col-span-1">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="Images/photo_6064143413210190480_y.jpg" 
+                 alt="सगाई की अंगूठियां एवं मेहंदी सजे हाथ" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <span class="absolute bottom-3 left-3 bg-emerald-700 text-white text-[11px] font-bold px-3 py-1 rounded-full">
+              🌿 मेहंदी व मुद्रिका
+            </span>
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-amber-950 font-yatra text-lg mb-1">मेहंदी की खुशबू और सोने की चमक</h4>
+            <p class="text-xs text-amber-800 leading-relaxed">
+              दुल्हन के मेहंदी सजे हाथ और वर-वधू की सगाई की मुद्रिकाएं प्रेम के अनमोल रिश्ते की गवाही देती हैं।
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       WEDDING EVENTS & TIMELINE (वैवाहिक कार्यक्रम)
+       ======================================================== -->
+  <section id="events" class="py-20 px-4 sm:px-6 max-w-6xl mx-auto">
+    
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold tracking-widest uppercase mb-3">
+        <i class="fa-solid fa-drum text-amber-700"></i>
+        <span>मांगलिक उत्सव रूपरेखा</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-yatra text-amber-950 mb-3">
+        वैवाहिक कार्यक्रम सूची
+      </h2>
+      <p class="max-w-2xl mx-auto text-sm text-amber-800/90 font-poppins">
+        मातृ-सदन <strong>किशनगंज</strong> एवं विवाह वाटिका <strong>दाउदनगर (पटना)</strong> में संपन्न होने वाले सभी मांगलिक अनुष्ठानों का सम्पूर्ण विवरण।
+      </p>
+      <div class="w-24 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mt-4"></div>
+    </div>
+
+    <!-- ==========================================
+         PHASE 1: KISHANGANJ CELEBRATIONS (मातृ-सदन)
+         ========================================== -->
+    <div class="mb-14">
+      
+      <!-- Kishanganj Special Banner -->
+      <div class="kishanganj-zone p-4 sm:p-6 rounded-2xl border border-amber-300/80 mb-8 bg-amber-50/60 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold badge-kishanganj mb-2">
+            📍 मातृ-सदन कार्यक्रम स्थल • किशनगंज (बिहार)
+          </span>
+          <h3 class="text-2xl sm:text-3xl font-bold font-yatra text-amber-950">
+            पावन मांगलिक उत्सव
+          </h3>
+          <p class="text-xs sm:text-sm text-amber-900/90 font-poppins mt-1">
+            <strong>स्थान:</strong> पश्चिमपल्ली, जिला-किशनगंज (बिहार) | हल्दी, मटकोर, मेहंदी, संगीत एवं देवी पूजन का मांगलिक आयोजन
+          </p>
+        </div>
+        <div class="shrink-0 bg-white/90 border border-amber-300 rounded-xl px-4 py-2.5 text-center shadow-xs">
+          <span class="text-[11px] font-bold text-amber-700 block uppercase">संपर्क (किशनगंज)</span>
+          <span class="font-bold text-sm text-[#4a0810]">+91 8102582242</span>
+        </div>
+      </div>
+
+      <!-- 3 Kishanganj Events Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Event 1: Haldi Matkor -->
+        <div class="event-card haldi p-6 flex flex-col justify-between bg-gradient-to-b from-amber-50/40 via-white to-amber-50/30">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-amber-200/80 text-amber-950 border border-amber-300">
+                २५ नवम्बर • बुधवार
+              </span>
+              <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-800 flex items-center justify-center text-xl">
+                🪔
+              </div>
+            </div>
+
+            <h4 class="text-xl font-bold font-yatra text-amber-950 mb-2">
+              सत्यनारायण पूजा एवं हल्दी मटकोर
+            </h4>
+
+            <div class="my-3 p-3 rounded-xl bg-amber-100/60 border border-amber-200 text-xs space-y-1">
+              <div class="font-bold text-amber-900 flex items-center">
+                <i class="fa-solid fa-location-dot text-amber-600 mr-1.5"></i>
+                पश्चिमपल्ली, किशनगंज
+              </div>
+              <div class="text-amber-800 flex items-center">
+                <i class="fa-solid fa-clock text-amber-600 mr-1.5"></i>
+                प्रातः शुभ मुहूर्त से सायंकाल तक
+              </div>
+            </div>
+
+            <p class="text-xs text-amber-900/90 leading-relaxed font-poppins">
+              भगवान श्री सत्यनारायण जी की पावन कथा से विवाह का शुभारंभ होगा, तत्पश्चात पारंपरिक हल्दी मटकोर का मांगलिक अनुष्ठान व मंगल गीत संपन्न होंगे।
+            </p>
+          </div>
+
+          <div class="mt-5 pt-3 border-t border-amber-200/80 flex items-center justify-between text-[11px] text-amber-700 font-semibold">
+            <span>थीम: पीतांबरी पीला</span>
+            <span class="text-amber-600 font-bold">#HaldiMatkor</span>
+          </div>
+        </div>
+
+        <!-- Event 2: Mehndi & Sangeet -->
+        <div class="event-card mehndi p-6 flex flex-col justify-between bg-gradient-to-b from-emerald-50/40 via-white to-emerald-50/30">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-200/80 text-emerald-950 border border-emerald-300">
+                २६ नवम्बर • गुरूवार
+              </span>
+              <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-800 flex items-center justify-center text-xl">
+                🌿
+              </div>
+            </div>
+
+            <h4 class="text-xl font-bold font-yatra text-emerald-950 mb-2">
+              हल्दी, मेहंदी एवं संगीत संध्या
+            </h4>
+
+            <div class="my-3 p-3 rounded-xl bg-emerald-100/60 border border-emerald-200 text-xs space-y-1">
+              <div class="font-bold text-emerald-900 flex items-center">
+                <i class="fa-solid fa-location-dot text-emerald-600 mr-1.5"></i>
+                पश्चिमपल्ली, किशनगंज
+              </div>
+              <div class="text-emerald-800 flex items-center">
+                <i class="fa-solid fa-clock text-emerald-600 mr-1.5"></i>
+                अपराह्न मेहंदी • संध्याकाल संगीत
+              </div>
+            </div>
+
+            <p class="text-xs text-emerald-900/90 leading-relaxed font-poppins">
+              सखियों व बहनों संग रचेगी गाढ़े रंग की मेहंदी, ढोलक की थाप, गिद्धा व संगीत संध्या की रंगारंग महफ़िल में होगा खुशियों का उत्सव।
+            </p>
+          </div>
+
+          <div class="mt-5 pt-3 border-t border-emerald-200/80 flex items-center justify-between text-[11px] text-emerald-700 font-semibold">
+            <span>थीम: मेहंदी हरा व गोल्ड</span>
+            <span class="text-emerald-600 font-bold">#MehndiNight</span>
+          </div>
+        </div>
+
+        <!-- Event 3: Devi Pujan -->
+        <div class="event-card pooja p-6 flex flex-col justify-between bg-gradient-to-b from-red-50/40 via-white to-red-50/30">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-red-200/80 text-red-950 border border-red-300">
+                २७ नवम्बर • शुक्रवार
+              </span>
+              <div class="w-10 h-10 rounded-full bg-red-500/20 text-red-800 flex items-center justify-center text-xl">
+                🌺
+              </div>
+            </div>
+
+            <h4 class="text-xl font-bold font-yatra text-red-950 mb-2">
+              देवी पूजन (Devi Pujan)
+            </h4>
+
+            <div class="my-3 p-3 rounded-xl bg-red-100/60 border border-red-200 text-xs space-y-1">
+              <div class="font-bold text-red-900 flex items-center">
+                <i class="fa-solid fa-location-dot text-red-600 mr-1.5"></i>
+                पश्चिमपल्ली, किशनगंज
+              </div>
+              <div class="text-red-800 flex items-center">
+                <i class="fa-solid fa-clock text-red-600 mr-1.5"></i>
+                प्रातःकाल देवी अर्चन व आरती
+              </div>
+            </div>
+
+            <p class="text-xs text-red-900/90 leading-relaxed font-poppins">
+              कुलदेवी एवं माँ जगदम्बा की पावन आराधना, नवदम्पति के अखंड सौभाग्य, सुखी दांपत्य एवं मंगलमय जीवन हेतु ईश्वरीय कृपा का पावन अनुष्ठान।
+            </p>
+          </div>
+
+          <div class="mt-5 pt-3 border-t border-red-200/80 flex items-center justify-between text-[11px] text-red-700 font-semibold">
+            <span>थीम: सिंदूरी लाल एवं शक्ति</span>
+            <span class="text-red-600 font-bold">#DeviPujan</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PHASE 2: PATNA MAIN WEDDING (विवाह वाटिका)
+         ========================================== -->
+    <div>
+      
+      <!-- Patna Special Banner -->
+      <div class="patna-zone p-4 sm:p-6 rounded-2xl border border-rose-300/80 mb-6 bg-rose-50/50 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold badge-patna mb-2">
+            ⭐ मुख्य विवाह समारोह • दाउदनगर, पटना (बिहार)
+          </span>
+          <h3 class="text-2xl sm:text-3xl font-bold font-yatra text-[#4a0810]">
+            शुभ विवाह, बारात एवं प्रीतिभोज
+          </h3>
+          <p class="text-xs sm:text-sm text-amber-950 font-poppins mt-1">
+            <strong>स्थान:</strong> मंजु वाटिका, दाउदनगर, पटना (बिहार) | बारात स्वागत, जयमाला, सात फेरे एवं प्रीतिभोज
+          </p>
+        </div>
+        <div class="shrink-0">
+          <a href="#venue" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-700 to-[#630c18] text-amber-200 text-xs font-bold shadow-md hover:brightness-110 transition-all inline-flex items-center space-x-1.5">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span>पटना विवाह स्थल देखें</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Wedding Day Card (Full Width Showcase) -->
+      <div class="event-card vivah p-6 sm:p-8 bg-gradient-to-br from-white via-amber-50/50 to-rose-50/40 border-2 border-amber-400">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          
+          <div class="lg:col-span-8">
+            <div class="flex items-center space-x-3 mb-3">
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-[#630c18] text-amber-200 border border-amber-400">
+                मुख्य लग्न दिवस • ३० नवम्बर २०२६ (सोमवार)
+              </span>
+              <span class="text-xs text-amber-800 font-bold">#ShubhVivah</span>
+            </div>
+
+            <h3 class="text-2xl sm:text-4xl font-bold font-yatra text-[#4a0810] mb-3">
+              बारात आगमन, शुभ-विवाह एवं प्रीतिभोज
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+              <div class="p-3 rounded-xl bg-amber-100/70 border border-amber-300 text-xs">
+                <span class="text-amber-800 font-bold block mb-0.5">
+                  <i class="fa-solid fa-utensils text-amber-700 mr-1.5"></i>
+                  प्रीतिभोज (स्नेहभोज):
+                </span>
+                <span class="text-[#4a0810] font-bold text-sm">संध्या 7:00 बजे से आपके शुभागमन तक</span>
+              </div>
+              <div class="p-3 rounded-xl bg-amber-100/70 border border-amber-300 text-xs">
+                <span class="text-amber-800 font-bold block mb-0.5">
+                  <i class="fa-solid fa-location-dot text-amber-700 mr-1.5"></i>
+                  विवाह स्थल:
+                </span>
+                <span class="text-[#4a0810] font-bold text-sm">मंजु वाटिका, दाउदनगर, पटना</span>
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-amber-950 font-poppins leading-relaxed">
+              गाजे-बाजे के साथ बारात का भव्य स्वागत, वरमाला, पावन सात फेरे, सिंदूर दान एवं भव्य प्रीतिभोज समारोह। नवदम्पति को आशीर्वाद देने हेतु आप सपरिवार सादर प्रार्थनीय हैं।
+            </p>
+          </div>
+
+          <div class="lg:col-span-4 text-center lg:border-l lg:border-amber-300/80 lg:pl-6">
+            <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-amber-500 via-amber-600 to-[#630c18] text-amber-200 flex items-center justify-center text-4xl shadow-lg mb-3">
+              👑
+            </div>
+            <p class="font-yatra text-lg text-[#4a0810] font-bold">मंजु वाटिका</p>
+            <p class="text-xs text-amber-800">दाउदनगर, पटना (बिहार)</p>
+            <div class="mt-4">
+              <span class="inline-block px-4 py-1.5 rounded-full bg-amber-200/80 border border-amber-400 text-amber-900 text-xs font-bold">
+                थीम: राजसी महरून एवं स्वर्ण
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================================
+       VENUE & DIRECTIONS (स्थान एवं मार्ग-निर्देशिका)
+       ======================================================== -->
+  <section id="venue" class="py-20 bg-gradient-to-b from-amber-50/60 via-[#fffdf9] to-amber-50/60 border-y border-amber-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center mb-14">
+        <div class="inline-block p-2 rounded-full bg-amber-100 text-amber-800 text-sm mb-3">
+          📍 मांगलिक उत्सव व विवाह स्थल
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-yatra text-amber-950 mb-3">
+          स्थान एवं मार्गदर्शन
+        </h2>
+        <p class="max-w-2xl mx-auto text-sm text-amber-800/80 font-poppins">
+          किशनगंज (मातृ-सदन) एवं दाउदनगर, पटना (विवाह वाटिका) के कार्यक्रम स्थलों का सम्पूर्ण पता
+        </p>
+        <div class="w-24 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mb-10">
+        
+        <!-- Venue 1: Kishanganj Matri Sadan -->
+        <div class="ornate-card p-6 sm:p-8 flex flex-col justify-between border-t-4 border-amber-500 bg-white">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold badge-kishanganj">
+                मातृ-सदन • २५, २६, २७ नवम्बर
+              </span>
+              <span class="text-2xl">🏡</span>
+            </div>
+
+            <h3 class="text-2xl sm:text-3xl font-bold font-yatra text-amber-950 mb-1">
+              पश्चिमपल्ली, किशनगंज
+            </h3>
+            <p class="text-xs uppercase tracking-wider text-amber-700 font-semibold mb-4">
+              जिला-किशनगंज (बिहार) • वधू का गृह-नगर
+            </p>
+
+            <div class="space-y-3 text-xs sm:text-sm text-amber-900 border-t border-b border-amber-200/80 py-4 mb-4">
+              <div class="flex items-start space-x-2.5">
+                <i class="fa-solid fa-calendar-days text-amber-600 mt-1"></i>
+                <div>
+                  <strong>आयोजित कार्यक्रम:</strong> सत्यनारायण पूजा, हल्दी मटकोर, मेहंदी, संगीत एवं देवी पूजन
+                </div>
+              </div>
+              <div class="flex items-start space-x-2.5">
+                <i class="fa-solid fa-user-tie text-amber-600 mt-1"></i>
+                <div>
+                  <strong>आकांक्षी / संपर्क:</strong> श्री रामा कान्त मंडल
+                </div>
+              </div>
+              <div class="flex items-start space-x-2.5">
+                <i class="fa-solid fa-phone text-emerald-600 mt-1"></i>
+                <div>
+                  <strong>फोन नंबर:</strong> <a href="tel:+918102582242" class="font-bold text-[#4a0810] underline">+91 8102582242</a>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-xs text-amber-800/90 italic">
+              किशनगंज रेलवे स्टेशन एवं मुख्य बस स्टैंड से पश्चिमपल्ली के लिए ई-रिक्शा व ऑटो की सीधी सुविधा उपलब्ध है।
+            </p>
+          </div>
+
+          <div class="mt-6">
+            <a href="https://www.google.com/maps/search/?api=1&query=Pashchimpalli+Kishanganj+Bihar" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="w-full inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold text-xs shadow-md transition-all">
+              <i class="fa-solid fa-map-location-dot"></i>
+              <span>किशनगंज स्थल का नक्शा देखें</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Venue 2: Patna Marriage Vatika -->
+        <div class="ornate-card p-6 sm:p-8 flex flex-col justify-between border-t-4 border-[#630c18] bg-white">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold badge-patna">
+                विवाह वाटिका • ३० नवम्बर २०२६
+              </span>
+              <span class="text-2xl">🏛️</span>
+            </div>
+
+            <h3 class="text-2xl sm:text-3xl font-bold font-yatra text-[#4a0810] mb-1">
+              मंजु वाटिका
+            </h3>
+            <p class="text-xs uppercase tracking-wider text-amber-800 font-semibold mb-4">
+              दाउदनगर, पटना (बिहार) • मुख्य शुभ-विवाह व प्रीतिभोज
+            </p>
+
+            <div class="space-y-3 text-xs sm:text-sm text-amber-900 border-t border-b border-amber-200/80 py-4 mb-4">
+              <div class="flex items-start space-x-2.5">
+                <i class="fa-solid fa-calendar-days text-[#630c18] mt-1"></i>
+                <div>
+                  <strong>आयोजित कार्यक्रम:</strong> बारात आगमन, वरमाला, शुभ-विवाह एवं भव्य प्रीतिभोज
+                </div>
+              </div>
+              <div class="flex items-start space-x-2.5">
+                <i class="fa-solid fa-clock text-[#630c18] mt-1"></i>
+                <div>
+                  <strong>समय:</strong> ३० नवम्बर २०२६, संध्या ७:०० बजे से आपके शुभागमन तक
+                </div>
+              </div>
+              <div class="flex items-start space-x-2.5">
+                <i class="fa-solid fa-phone text-emerald-600 mt-1"></i>
+                <div>
+                  <strong>हेल्पलाइन / संपर्क:</strong> <a href="tel:+918102582242" class="font-bold text-[#4a0810] underline">+91 8102582242</a>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-xs text-amber-800/90 italic">
+              पटना जंक्शन एवं बैरिया बस स्टैंड से दाउदनगर मंजु वाटिका हेतु सुगम टैक्सी व ऑटो उपलब्ध हैं।
+            </p>
+          </div>
+
+          <div class="mt-6">
+            <a href="https://www.google.com/maps/search/?api=1&query=Manju+Vatika+Daudnagar+Patna+Bihar" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="w-full inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl bg-gradient-to-r from-rose-800 to-[#42080f] hover:from-rose-900 hover:to-[#2a0409] text-amber-200 font-bold text-xs shadow-md transition-all">
+              <i class="fa-solid fa-diamond-turn-right"></i>
+              <span>पटना विवाह स्थल (Google Maps)</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Live Google Map View for Patna -->
+      <div class="ornate-card overflow-hidden p-3 bg-white">
+        <div class="relative w-full h-72 sm:h-84 rounded-xl overflow-hidden bg-amber-100 flex items-center justify-center">
+          <iframe 
+            src="https://maps.google.com/maps?q=Daudnagar%20Patna%20Bihar&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+            class="w-full h-full border-0" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Google Map Location">
+          </iframe>
+          <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-amber-300 text-xs font-bold text-amber-950 flex items-center space-x-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-ping"></span>
+            <span>मंजु वाटिका, दाउदनगर (पटना)</span>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       PHOTO GALLERY (शाही फोटो गैलरी)
+       ======================================================== -->
+  <section id="gallery" class="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+    
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold tracking-widest uppercase mb-3">
+        <i class="fa-solid fa-camera-retro text-amber-700"></i>
+        <span>यादों के सुनहरे पल</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-yatra text-amber-950 mb-3">
+        शाही फोटो गैलरी
+      </h2>
+      <p class="max-w-xl mx-auto text-sm text-amber-800/80 font-poppins">
+        सगाई, पूजन एवं वर-वधू के अविस्मरणीय और मनमोहक पलों की झलकियां। फोटो पर क्लिक कर बड़ी स्क्रीन पर देखें।
+      </p>
+      <div class="w-24 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mt-4"></div>
+    </div>
+
+    <!-- Gallery Filter Tags -->
+    <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
+      <button class="filter-btn active px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-amber-600 text-white shadow-sm transition-all" data-filter="all">
+        सभी तस्वीरें (All)
+      </button>
+      <button class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-amber-100 text-amber-900 hover:bg-amber-200 transition-all" data-filter="couple">
+        जोड़ी (Couple)
+      </button>
+      <button class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-amber-100 text-amber-900 hover:bg-amber-200 transition-all" data-filter="bride">
+        दुल्हन (Bride Special)
+      </button>
+      <button class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-amber-100 text-amber-900 hover:bg-amber-200 transition-all" data-filter="rituals">
+        सगाई व रस्में (Rituals)
+      </button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+      
+      <!-- 1. Bride Special Royal (Bridal.png) -->
+      <div class="gallery-card group" data-category="bride">
+        <div class="aspect-[3/4] overflow-hidden rounded-2xl border-2 border-amber-400 bg-black relative shadow-lg cursor-pointer">
+          <img src="Images/Bridal.png" 
+               alt="दुल्हन नेहा कुमारी - राजसी लाल जोड़ा" 
+               data-caption="दुल्हन नेहा कुमारी - लाल जोड़े में अप्रतिम सौंदर्य"
+               class="gallery-thumb w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+          </div>
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-rose-700/80 text-white text-[10px] font-bold">वधू</span>
+        </div>
+      </div>
+
+      <!-- 2. Groom Royal Portrait (Groom.png) -->
+      <div class="gallery-card group" data-category="couple">
+        <div class="aspect-[3/4] overflow-hidden rounded-2xl border-2 border-amber-400 bg-black relative shadow-lg cursor-pointer">
+          <img src="Images/Groom.png" 
+               alt="वर गुड्डू राय - शाही शेरवानी व साफा" 
+               data-caption="वर गुड्डू राय - शाही शेरवानी, साफा एवं राजसी हार"
+               class="gallery-thumb w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+          </div>
+          <span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-amber-700/80 text-white text-[10px] font-bold">वर</span>
+        </div>
+      </div>
+
+      <!-- 3. Couple Hero (Image 479) -->
+      <div class="gallery-card group" data-category="couple">
+        <div class="aspect-[3/4] overflow-hidden rounded-2xl border-2 border-amber-300/80 bg-black relative shadow-md cursor-pointer">
+          <img src="Images/photo_6064143413210190479_y.jpg" 
+               alt="नेहा और गुड्डू - शाही जोड़ी" 
+               data-caption="नेहा और गुड्डू - मुस्कुराती शाही जोड़ी"
+               class="gallery-thumb w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Couple Hand in Hand (Image 475) -->
+      <div class="gallery-card group" data-category="couple">
+        <div class="aspect-[3/4] overflow-hidden rounded-2xl border-2 border-amber-300/80 bg-black relative shadow-md cursor-pointer">
+          <img src="Images/photo_6064143413210190475_y.jpg" 
+               alt="हाथों में हाथ - जीवन भर का साथ" 
+               data-caption="हाथों में हाथ - जीवन भर का साथ"
+               class="gallery-thumb w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Bride Solo Portrait (Image 468) -->
+      <div class="gallery-card group" data-category="bride">
+        <div class="aspect-[3/4] overflow-hidden rounded-2xl border-2 border-amber-300/80 bg-black relative shadow-md cursor-pointer">
+          <img src="Images/photo_6064143413210190468_y.jpg" 
+               alt="दुल्हन नेहा कुमारी" 
+               data-caption="दुल्हन नेहा कुमारी - सादगी व सौंदर्य"
+               class="gallery-thumb w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Bride in Red Veil (Image 472) -->
+      <div class="gallery-card group" data-category="bride">
+        <div class="aspect-[3/4] overflow-hidden rounded-2xl border-2 border-amber-300/80 bg-black relative shadow-md cursor-pointer">
+          <img src="Images/photo_6064143413210190472_y.jpg" 
+               alt="लाल चुनरी में वधू" 
+               data-caption="लाल चुनरी में वधू - शांत व सौम्य भाव"
+               class="gallery-thumb w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Bride Mukut & Puja (Image 470) -->
+      <div class="gallery-card group" data-category="bride">
+        <div class="aspect-[3/4] overflow-hidden rounded-2xl border-2 border-amber-300/80 bg-black relative shadow-md cursor-pointer">
+          <img src="Images/photo_6064143413210190470_y.jpg" 
+               alt="मुकुट धारण एवं मंगल रस्म" 
+               data-caption="मुकुट धारण एवं मंगल रस्म"
+               class="gallery-thumb w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Couple Pranam (Image 471) -->
+      <div class="gallery-card group" data-category="rituals">
+        <div class="aspect-[3/4] overflow-hidden rounded-2xl border-2 border-amber-300/80 bg-black relative shadow-md cursor-pointer">
+          <img src="Images/photo_6064143413210190471_y.jpg" 
+               alt="युगल का ईश वंदना प्रणाम" 
+               data-caption="युगल का ईश वंदना प्रणाम - मंगल आशीर्वाद"
+               class="gallery-thumb w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Mandap Ritual (Image 473) -->
+      <div class="gallery-card group" data-category="rituals">
+        <div class="aspect-[3/4] overflow-hidden rounded-2xl border-2 border-amber-300/80 bg-black relative shadow-md cursor-pointer">
+          <img src="Images/photo_6064143413210190473_y.jpg" 
+               alt="मंडप एवं कलश पूजन" 
+               data-caption="मंडप एवं कलश पूजन"
+               class="gallery-thumb w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Emotional Ritual Close-up (Image 474) -->
+      <div class="gallery-card group" data-category="rituals">
+        <div class="aspect-[3/4] overflow-hidden rounded-2xl border-2 border-amber-300/80 bg-black relative shadow-md cursor-pointer">
+          <img src="Images/photo_6064143413210190474_y.jpg" 
+               alt="भावुक मांगलिक क्षण" 
+               data-caption="भावुक मांगलिक क्षण - विवाह की रस्में"
+               class="gallery-thumb w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Mandap Sacred Moments (Image 478) -->
+      <div class="gallery-card group" data-category="rituals">
+        <div class="aspect-[3/4] overflow-hidden rounded-2xl border-2 border-amber-300/80 bg-black relative shadow-md cursor-pointer">
+          <img src="Images/photo_6064143413210190478_y.jpg" 
+               alt="पारंपरिक पूजन अनुष्ठान" 
+               data-caption="पारंपरिक पूजन अनुष्ठान"
+               class="gallery-thumb w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Ring Exchange Close (Image 469) -->
+      <div class="gallery-card group" data-category="rituals">
+        <div class="aspect-[3/4] overflow-hidden rounded-2xl border-2 border-amber-300/80 bg-black relative shadow-md cursor-pointer">
+          <img src="Images/photo_6064143413210190469_y.jpg" 
+               alt="अंगूठी पहनाते हुए" 
+               data-caption="अंगूठी पहनाते हुए - परिणय का प्रथम पग"
+               class="gallery-thumb w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. Ring Close Up (Image 476) -->
+      <div class="gallery-card group" data-category="rituals">
+        <div class="aspect-[3/4] overflow-hidden rounded-2xl border-2 border-amber-300/80 bg-black relative shadow-md cursor-pointer">
+          <img src="Images/photo_6064143413210190476_y.jpg" 
+               alt="मुद्रिका समर्पण" 
+               data-caption="मुद्रिका समर्पण - सगाई का अनमोल पल"
+               class="gallery-thumb w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. Rings and Mehendi (Image 480) -->
+      <div class="gallery-card group" data-category="rituals">
+        <div class="aspect-[3/4] overflow-hidden rounded-2xl border-2 border-amber-300/80 bg-black relative shadow-md cursor-pointer">
+          <img src="Images/photo_6064143413210190480_y.jpg" 
+               alt="सगाई की अंगूठी व मेहंदी" 
+               data-caption="सगाई की अंगूठी व मेहंदी - प्रेम का रंग"
+               class="gallery-thumb w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+            <i class="fa-solid fa-magnifying-glass-plus text-2xl"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================================
+       ORIGINAL SHADI CARD SCAN VIEWER (मूल शादी पत्रिका)
+       ======================================================== -->
+  <section id="card-scan" class="py-20 bg-amber-50/50 border-y border-amber-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      
+      <div class="inline-block p-2 rounded-full bg-amber-100 text-amber-800 text-sm mb-3">
+        📜 मूल निमंत्रण पत्रिका
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold font-yatra text-amber-950 mb-3">
+        पारंपरिक शादी कार्ड देखें
+      </h2>
+      <p class="max-w-xl mx-auto text-sm text-amber-800/80 font-poppins mb-8">
+        यदि आप मूल मुद्रित शादी कार्ड के दोनों पृष्ठ देखना चाहते हैं, तो नीचे दिए गए टैब से चयन करें:
+      </p>
+
+      <!-- Scanned Images Display Box -->
+      <div class="max-w-4xl mx-auto ornate-card p-4 sm:p-6 bg-white shadow-xl">
+        <div id="card-view-all" class="relative group">
+          <img src="Shadi%20Card/Shadi%20Card.png" 
+               alt="डिज़ाइनर सम्पूर्ण शादी कार्ड - नेहा संग गुड्डू" 
+               class="w-full rounded-xl shadow-lg border border-amber-300 cursor-pointer hover:brightness-105 transition-all"
+               onclick="window.open(this.src, '_blank')">
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-amber-800 border-t border-amber-200/80 pt-3">
+            <span class="italic">✨ शादी कार्ड को पूरा बड़ा (Full Zoom) देखने के लिए चित्र पर क्लिक करें</span>
+            <div class="flex items-center space-x-3">
+              <a href="Shadi%20Card/Shadi%20Card.png" target="_blank" class="px-4 py-2 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold transition-all flex items-center space-x-1.5">
+                <i class="fa-solid fa-up-right-and-down-left-from-center text-xs"></i>
+                <span>फुलस्क्रीन देखें</span>
+              </a>
+              <a href="Shadi%20Card/Shadi%20Card.png" download="Neha-Guddu-Shadi-Card.png" class="px-4 py-2 rounded-lg bg-[#630c18] hover:bg-[#7d1320] text-amber-200 font-bold transition-all flex items-center space-x-1.5">
+                <i class="fa-solid fa-download text-xs"></i>
+                <span>कार्ड डाउनलोड करें</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FAMILY & HOSTS (दर्शनाभिलाषी एवं आकांक्षी)
+       ======================================================== -->
+  <section id="family" class="py-20 px-4 sm:px-6 max-w-6xl mx-auto">
+    
+    <div class="text-center mb-16">
+      <div class="inline-block p-2 rounded-full bg-amber-100 text-amber-800 text-sm mb-3">
+        🙏 पारिवारिक स्नेह एवं निमंत्रक
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-yatra text-amber-950 mb-3">
+        दर्शनाभिलाषी एवं आकांक्षी
+      </h2>
+      <p class="max-w-xl mx-auto text-sm text-amber-800/80 font-poppins">
+        पूरे परिवार का सस्नेह आमंत्रण
+      </p>
+      <div class="w-24 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mt-4"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- 1. दर्शनाभिलाषी (Well-Wishers / Family Members) -->
+      <div class="ornate-card p-6 sm:p-8">
+        <div class="flex items-center space-x-3 mb-6 border-b border-amber-200 pb-4">
+          <div class="w-12 h-12 rounded-full bg-amber-500/20 text-amber-700 flex items-center justify-center text-2xl">
+            👨‍👩‍👧‍👦
+          </div>
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-amber-700">पारिवारिक स्नेह</span>
+            <h3 class="text-2xl font-bold font-yatra text-amber-950">दर्शनाभिलाषी</h3>
+          </div>
+        </div>
+
+        <ul class="space-y-4 text-sm sm:text-base text-amber-900 font-poppins">
+          <li class="flex items-start space-x-3">
+            <span class="text-amber-600 font-bold mt-0.5">•</span>
+            <div>
+              <strong class="text-amber-950">चाचा:</strong> 
+              श्री जयकांत मंडल, श्रीकांत मंडल, केवल मंडल, भीम मंडल, अर्जुन मंडल
+            </div>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-amber-600 font-bold mt-0.5">•</span>
+            <div>
+              <strong class="text-amber-950">बहन:</strong> 
+              सुश्री मधु कुमारी, निकिता कुमारी
+            </div>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-amber-600 font-bold mt-0.5">•</span>
+            <div>
+              <strong class="text-amber-950">भाई:</strong> 
+              श्री शिवा कुमार मंडल
+            </div>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-amber-600 font-bold mt-0.5">•</span>
+            <div>
+              <strong class="text-amber-950">भांजा:</strong> 
+              अद्विक राय
+            </div>
+          </li>
+          <li class="pt-2 text-rose-800 font-bold font-yatra text-base">
+            ✨ एवं समस्त मंडल परिवार ✨
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2. आकांक्षी (The Host) -->
+      <div class="ornate-card p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center space-x-3 mb-6 border-b border-amber-200 pb-4">
+            <div class="w-12 h-12 rounded-full bg-rose-500/20 text-rose-700 flex items-center justify-center text-2xl">
+              🌺
+            </div>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-rose-700">सस्नेह निमंत्रक</span>
+              <h3 class="text-2xl font-bold font-yatra text-amber-950">आकांक्षी</h3>
+            </div>
+          </div>
+
+          <div class="space-y-3 mb-6">
+            <p class="text-2xl sm:text-3xl font-bold font-yatra text-[#4a0810]">
+              श्री रामा कान्त मंडल
+            </p>
+            <p class="text-sm font-semibold text-amber-900">
+              पश्चिमपल्ली, जिला-किशनगंज (बिहार)
+            </p>
+            <div class="flex items-center space-x-2 text-amber-800 text-sm">
+              <i class="fa-solid fa-phone text-emerald-600"></i>
+              <span>संपर्क: <strong>+91 8102582242</strong></span>
+            </div>
+          </div>
+
+          <div class="bg-amber-50/90 border border-amber-200/90 rounded-xl p-4 text-xs sm:text-sm text-amber-950 italic leading-relaxed">
+            "आपकी गौरवमयी उपस्थिति एवं स्नेहील आशीर्वाद की मृदुल ज्योत्स्ना से नवदम्पति के भावी जीवन को ज्योर्तिमय करने की कृपा करें।"
+          </div>
+        </div>
+
+        <div class="mt-6 text-right">
+          <span class="text-xs text-amber-600 font-semibold">सादर आमंत्रण • सपरिवार</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================================
+       FAMILY WELCOME & GUEST BLESSINGS (सपरिवार आमंत्रण व शुभकामनाएं)
+       ======================================================== -->
+  <section id="rsvp" class="py-20 bg-gradient-to-b from-[#fffdf9] via-amber-50/70 to-[#fffdf9] border-t border-amber-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center mb-14">
+        <div class="inline-block p-2 rounded-full bg-amber-100 text-amber-800 text-sm mb-3">
+          💌 सपरिवार सादर आमंत्रण
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-yatra text-amber-950 mb-3">
+          समस्त परिवार का हार्दिक स्वागत
+        </h2>
+        <p class="max-w-2xl mx-auto text-sm text-amber-800/80 font-poppins">
+          हमारे इस मांगलिक उत्सव में आपके संपूर्ण परिवार की उपस्थिति ही हमारा सबसे बड़ा मान व सम्मान है
+        </p>
+        <div class="w-24 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- Left: Grand Family Invitation & Simple Wish Form (5 Cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <!-- Special "Samast Parivaar Ko Invite Hai" Royal Banner Card -->
+          <div class="ornate-card p-6 bg-gradient-to-br from-amber-950 via-[#630c18] to-amber-950 text-white border-2 border-amber-400 shadow-xl relative overflow-hidden">
+            <div class="text-3xl text-amber-300 mb-2">🌸 卐 🌸</div>
+            <h4 class="text-xl sm:text-2xl font-bold font-yatra gold-shimmer mb-2">
+              सपरिवार सादर आमंत्रण
+            </h4>
+            <p class="text-xs sm:text-sm text-amber-100/90 font-poppins leading-relaxed mb-4">
+              "हमारे इस मांगलिक अवसर पर किसी भी तरह की औपचारिकता या परिवार के सदस्यों की गिनती की कोई आवश्यकता नहीं है। आप समस्त परिवार, इष्ट-मित्र एवं स्नेहीजन सादर आमंत्रित हैं। आपकी सपरिवार गरिमामयी उपस्थिति और स्नेहाशीष ही नवदम्पति का सबसे अनमोल उपहार है।"
+            </p>
+            <div class="border-t border-amber-400/40 pt-3 text-[11px] text-amber-200 font-yatra flex items-center justify-between">
+              <span>📍 किशनगंज: २५-२७ नवम्बर</span>
+              <span>•</span>
+              <span>📍 पटना: ३० नवम्बर</span>
+            </div>
+          </div>
+
+          <!-- Simple Blessing Message Form -->
+          <div class="ornate-card p-6 bg-white">
+            <h4 class="text-xl font-bold font-yatra text-amber-950 mb-3 flex items-center space-x-2">
+              <span>✍️</span>
+              <span>वर-वधू को शुभ आशीर्वाद भेजें</span>
+            </h4>
+
+            <form id="rsvp-form" class="space-y-3.5">
+              <div>
+                <label for="guest-name" class="block text-xs font-bold uppercase tracking-wider text-amber-900 mb-1">
+                  आपका शुभ नाम *
+                </label>
+                <input type="text" id="guest-name" required placeholder="जैसे: अमित कुमार व परिवार" 
+                       class="w-full px-4 py-2.5 rounded-xl border border-amber-300 focus:outline-none focus:border-amber-600 text-sm bg-amber-50/30">
+              </div>
+
+              <div>
+                <label for="guest-relation" class="block text-xs font-bold uppercase tracking-wider text-amber-900 mb-1">
+                  शहर या संबंध (वैकल्पिक)
+                </label>
+                <input type="text" id="guest-relation" placeholder="जैसे: किशनगंज से / पटना से / पारिवारिक मित्र" 
+                       class="w-full px-4 py-2.5 rounded-xl border border-amber-300 focus:outline-none focus:border-amber-600 text-sm bg-amber-50/30">
+              </div>
+
+              <div>
+                <label for="guest-message" class="block text-xs font-bold uppercase tracking-wider text-amber-900 mb-1">
+                  नेहा और गुड्डू के लिए मंगलकामनाएं
+                </label>
+                <textarea id="guest-message" rows="3" placeholder="नवदम्पति को वैवाहिक जीवन की हार्दिक मंगलकामनाएं..." 
+                          class="w-full px-4 py-2.5 rounded-xl border border-amber-300 focus:outline-none focus:border-amber-600 text-sm bg-amber-50/30"></textarea>
+              </div>
+
+              <button type="submit" 
+                      class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white font-bold text-sm shadow-md hover:shadow-lg hover:brightness-110 transition-all flex items-center justify-center space-x-2 cursor-pointer">
+                <i class="fa-solid fa-heart text-rose-300"></i>
+                <span>आशीर्वाद एवं शुभकामनाएं भेजें</span>
+              </button>
+            </form>
+
+            <!-- Success Toast -->
+            <div id="rsvp-success-msg" class="hidden mt-3 p-3 rounded-xl bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-semibold">
+              🎉 बहुत-बहुत धन्यवाद! आपका मंगल आशीर्वाद सफलतापूर्वक दर्ज कर लिया गया है।
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Live Wishes Board (7 Cols) -->
+        <div class="lg:col-span-7 ornate-card p-6 sm:p-8 bg-white flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4 border-b border-amber-200 pb-3">
+              <h3 class="text-2xl font-bold font-yatra text-amber-950 flex items-center space-x-2">
+                <span>💬</span>
+                <span>स्नेहीजनों की शुभकामनाएं</span>
+              </h3>
+              <span class="text-xs font-bold text-amber-700 bg-amber-100 px-3 py-1 rounded-full">
+                Live Guestbook
+              </span>
+            </div>
+
+            <!-- Wishes Scroll List -->
+            <div id="wishes-container" class="space-y-3 max-h-[440px] overflow-y-auto pr-2">
+              <!-- Rendered via script.js -->
+            </div>
+          </div>
+
+          <div class="mt-6 pt-3 border-t border-amber-200/80 text-center">
+            <p class="text-xs text-amber-800 italic">
+              "प्रेम और आशीर्वाद ही सबसे बड़ा उपहार है"
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FOOTER & 1-CLICK SHARING
+       ======================================================== -->
+  <footer class="bg-gradient-to-b from-[#42080f] via-[#2a0409] to-[#150204] text-white pt-16 pb-12 border-t-2 border-amber-500/40">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      
+      <!-- Folded Hands Namaste Icon -->
+      <div class="text-4xl text-amber-300 mb-3">🙏</div>
+
+      <h3 class="text-2xl sm:text-3xl font-bold font-yatra gold-shimmer mb-2">
+        आपकी उपस्थिति हमारे लिए अत्यंत सम्मानीय है
+      </h3>
+
+      <p class="text-xs sm:text-sm text-amber-200/80 max-w-xl mx-auto mb-8 font-poppins leading-relaxed">
+        आयुष्मती नेहा कुमारी संग आयुष्मान् गुड्डू राय के परिणय सूत्र बंधन के इस पावन उत्सव में आप सपरिवार सादर आमंत्रित हैं।
+      </p>
+
+      <!-- WhatsApp Share Big CTA -->
+      <div class="mb-10">
+        <button onclick="document.getElementById('whatsapp-share-btn').click()" 
+                class="inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm sm:text-base shadow-xl hover:scale-105 transition-all">
+          <i class="fa-brands fa-whatsapp text-2xl"></i>
+          <span>यह निमंत्रण WhatsApp पर परिजनों को भेजें</span>
+        </button>
+      </div>
+
+      <div class="w-full h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent my-8"></div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-amber-300/70 font-poppins gap-4">
+        <div>
+          © 2026 नेहा संग गुड्डू शुभ विवाह • समस्त मंडल एवं राय परिवार
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="#home" class="hover:text-amber-200 transition-colors">शीर्ष पर जाएं ↑</a>
+          <span>•</span>
+          <a href="#events" class="hover:text-amber-200 transition-colors">कार्यक्रम</a>
+          <span>•</span>
+          <a href="#venue" class="hover:text-amber-200 transition-colors">विवाह स्थल</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       FULLSCREEN LIGHTBOX MODAL
+       ======================================================== -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white text-3xl hover:text-amber-400 focus:outline-none z-50">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-2xl md:text-4xl hover:text-amber-400 focus:outline-none z-50 p-3">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-2xl md:text-4xl hover:text-amber-400 focus:outline-none z-50 p-3">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="विवाह फोटो">
+      <p id="lightbox-caption" class="text-amber-200 font-yatra text-base md:text-lg mt-3 drop-shadow"></p>
+    </div>
+  </div>
+
+  <!-- Custom Javascript File -->
+  <script src="script.js"></script>
+</body>
+</html>
